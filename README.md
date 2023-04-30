@@ -5,7 +5,7 @@ Name Generator is an app that generate names for projects or anything. It was cr
 
 For the GUI of this project I used [Qt](https://www.qt.io/)\
 Qt source code modifications are non-proprietary.\
-Qt is interface tool for programmers that is easy to use and make life easier :)\
+Qt is a interface tool for programmers that is easy to use and make life easier :)\
 
 # GUI
 
