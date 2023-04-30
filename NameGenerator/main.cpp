@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
     QCheckBox *removeGapCheckbox = new QCheckBox();
     QCheckBox *specialNamesCheckbox = new QCheckBox();
     QPushButton *github = new QPushButton("Open GitHub");
+    QPushButton *version = new QPushButton("Version");
     QPushButton *generateButton = new QPushButton("Generate");
     QTextEdit *outputText = new QTextEdit();
 
@@ -44,8 +45,9 @@ int main(int argc, char *argv[])
     layout->addWidget(removeGapCheckbox, 3, 0, Qt::AlignCenter);
     layout->addWidget(specialNamesLabel, 4, 0);
     layout->addWidget(specialNamesCheckbox, 4, 0, Qt::AlignCenter);
-    layout->addWidget(github, 5, 0, 1, 1, Qt::AlignLeft);
+    layout->addWidget(github, 1, 0, 1, 2, Qt::AlignRight);
     layout->addWidget(generateButton, 6, 0, 1, 2, Qt::AlignCenter);
+    layout->addWidget(version, 2, 0, 1, 2, Qt::AlignRight);
     layout->addWidget(outputText, 7, 0, 1, 2);
 
     // connect the generate button to a slot function
@@ -60,10 +62,17 @@ int main(int argc, char *argv[])
 
         outputText->setText(projectName);
     });
+
     QObject::connect(github, &QPushButton::clicked, [&](){
         string git = "https://github.com/HojdaAdelin/Name-Generator";
         system(string("start " + git).c_str());
     } );
+
+    QObject::connect(version, &QPushButton::clicked, [&]() {
+        QString n_version = "Version: BETA 1.0";
+        outputText->setText(n_version);
+    });
+
     window.show();
     return app.exec();
 }
