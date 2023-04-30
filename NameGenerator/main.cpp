@@ -5,6 +5,9 @@
 #include <QPushButton>
 #include <QTextEdit>
 #include "Generator/generate.h"
+#include <iostream>
+
+using namespace std;
 
 int main(int argc, char *argv[])
 {
@@ -27,6 +30,7 @@ int main(int argc, char *argv[])
     nameCheckbox->setChecked(true); // make the name checkbox checked by default
     QCheckBox *removeGapCheckbox = new QCheckBox();
     QCheckBox *specialNamesCheckbox = new QCheckBox();
+    QPushButton *github = new QPushButton("Open GitHub");
     QPushButton *generateButton = new QPushButton("Generate");
     QTextEdit *outputText = new QTextEdit();
 
@@ -40,8 +44,9 @@ int main(int argc, char *argv[])
     layout->addWidget(removeGapCheckbox, 3, 0, Qt::AlignCenter);
     layout->addWidget(specialNamesLabel, 4, 0);
     layout->addWidget(specialNamesCheckbox, 4, 0, Qt::AlignCenter);
-    layout->addWidget(generateButton, 5, 0, 1, 2, Qt::AlignCenter);
-    layout->addWidget(outputText, 6, 0, 1, 2);
+    layout->addWidget(github, 5, 0, 1, 1, Qt::AlignLeft);
+    layout->addWidget(generateButton, 6, 0, 1, 2, Qt::AlignCenter);
+    layout->addWidget(outputText, 7, 0, 1, 2);
 
     // connect the generate button to a slot function
     QObject::connect(generateButton, &QPushButton::clicked, [&]() {
@@ -55,7 +60,10 @@ int main(int argc, char *argv[])
 
         outputText->setText(projectName);
     });
-
+    QObject::connect(github, &QPushButton::clicked, [&](){
+        string git = "https://github.com/HojdaAdelin/Name-Generator";
+        system(string("start " + git).c_str());
+    } );
     window.show();
     return app.exec();
 }
