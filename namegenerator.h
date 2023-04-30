@@ -1,0 +1,5 @@
+
+#ifndef NAMEGENERATOR_H
+#define NAMEGENERATOR_H
+
+#endif // NAMEGENERATOR_H
