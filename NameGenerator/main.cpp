@@ -7,6 +7,8 @@
 #include "Generator/generate.h"
 #include <iostream>
 #include "Generator/password.h"
+#include <QLineEdit>
+#include <QRandomGenerator>
 
 using namespace std;
 
@@ -37,7 +39,6 @@ int main(int argc, char *argv[])
     QPushButton *log = new QPushButton("Change log");
     QPushButton *passGenerator = new QPushButton("Password Generator");
     QTextEdit *outputText = new QTextEdit();
-
     // add the widgets to the layout
     layout->addWidget(titleLabel, 0, 0, 1, 2, Qt::AlignCenter);
     layout->addWidget(colorLabel, 1, 0);
@@ -87,6 +88,7 @@ int main(int argc, char *argv[])
 
         outputText->setText(generate_random_string(16));
     });
+
 
     window.show();
     return app.exec();

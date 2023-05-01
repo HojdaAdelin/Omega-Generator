@@ -3,9 +3,9 @@
 
 NameGenerator::NameGenerator()
 {
-    colorsList << "Red" << "Orange" << "Yellow" << "Green" << "Blue" << "Purple" << "Pink";
-    namesList << "Alpha" << "Beta" << "Gamma" << "Delta" << "Epsilon" << "Zeta" << "Eta" << "Theta";
-    specialNamesList << "Titan" << "Dragon" << "Phoenix" << "Valkyrie" << "Wizard" << "Samurai" << "Ninja";
+    colorsList << "Red" << "Orange" << "Yellow" << "Green" << "Blue" << "Purple" << "Pink" << "Dark" << "Mat";
+    namesList << "Alpha" << "Beta" << "Gamma" << "Delta" << "Epsilon" << "Zeta" << "Eta" << "Theta" << "Penta" << "Galaxy" << "Eclipse" << "Omega" << "Lose";
+    specialNamesList << "Titan" << "Dragon" << "Phoenix" << "Valkyrie" << "Wizard" << "Samurai" << "Ninja" << "Hook" << "Hud" << "GUI" << "UI" << "Nano" << "Game" << "Never";
 }
 
 QString NameGenerator::generateName(bool useSpecialNames, bool includeColor, bool includeName, bool removeGap)
