@@ -9,7 +9,7 @@ Qt is a interface tool for programmers that is easy to use and make life easier 
 
 # GUI
 
-![Screenshot 2023-04-30 193239](https://user-images.githubusercontent.com/83898333/235364782-61f0b748-37af-4dd1-b5c8-837085d58db8.png)
+![Screenshot 2023-05-01 194331](https://user-images.githubusercontent.com/83898333/235490260-001b8f40-e833-419a-aa28-ff09f288e961.png)
 
 # Features
 
@@ -19,6 +19,9 @@ Color names include
 Names include
 Special names include
 Remove gap between color, names & special names
+Version & Change log button
+Password generator
+Open project source button
 
 </pre>
 
