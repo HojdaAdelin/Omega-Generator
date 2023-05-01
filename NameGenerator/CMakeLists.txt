@@ -19,6 +19,8 @@ set(PROJECT_SOURCES
         UI/mainwindow.ui
         Generator/generate.h
         Generator/generator.cpp
+        Generator/password.h
+        Generator/password.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

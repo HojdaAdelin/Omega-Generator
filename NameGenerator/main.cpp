@@ -6,6 +6,7 @@
 #include <QTextEdit>
 #include "Generator/generate.h"
 #include <iostream>
+#include "Generator/password.h"
 
 using namespace std;
 
@@ -14,13 +15,13 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     QWidget window;
-    window.setWindowTitle("Name Generator");
+    window.setWindowTitle("Omega Generator");
     window.setFixedSize(400, 300); // make the window a little bigger
     window.setWindowFlag(Qt::MSWindowsFixedSizeDialogHint, true); // make window non-resizable
 
     // create the layout
     QGridLayout *layout = new QGridLayout(&window);
-    QLabel *titleLabel = new QLabel("Name Generator");
+    QLabel *titleLabel = new QLabel("Omega Generator");
     QLabel *colorLabel = new QLabel("Include color");
     QLabel *nameLabel = new QLabel("Include name");
     QLabel *removeGapLabel = new QLabel("Remove gap");
@@ -33,6 +34,8 @@ int main(int argc, char *argv[])
     QPushButton *github = new QPushButton("Open GitHub");
     QPushButton *version = new QPushButton("Version");
     QPushButton *generateButton = new QPushButton("Generate");
+    QPushButton *log = new QPushButton("Change log");
+    QPushButton *passGenerator = new QPushButton("Password Generator");
     QTextEdit *outputText = new QTextEdit();
 
     // add the widgets to the layout
@@ -48,6 +51,8 @@ int main(int argc, char *argv[])
     layout->addWidget(github, 1, 0, 1, 2, Qt::AlignRight);
     layout->addWidget(generateButton, 6, 0, 1, 2, Qt::AlignCenter);
     layout->addWidget(version, 2, 0, 1, 2, Qt::AlignRight);
+    layout->addWidget(log, 3, 0, 1, 2, Qt::AlignRight);
+    layout->addWidget(passGenerator, 4, 0, 1, 2, Qt::AlignRight);
     layout->addWidget(outputText, 7, 0, 1, 2);
 
     // connect the generate button to a slot function
@@ -71,6 +76,16 @@ int main(int argc, char *argv[])
     QObject::connect(version, &QPushButton::clicked, [&]() {
         QString n_version = "Version: BETA 1.0";
         outputText->setText(n_version);
+    });
+
+    QObject::connect(log, &QPushButton::clicked, [&]() {
+        QString logs = "-Interface\n-Functions";
+        outputText->setText(logs);
+    });
+
+    QObject::connect(passGenerator, &QPushButton::clicked, [&]() {
+
+        outputText->setText(generate_random_string(16));
     });
 
     window.show();
