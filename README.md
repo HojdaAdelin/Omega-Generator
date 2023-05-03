@@ -22,7 +22,6 @@ Remove gap between color, names & special names
 Version & Change log button
 Password generator
 Open project source button
-
 </pre>
 
 # SOON!
